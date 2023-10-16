@@ -50,6 +50,11 @@ namespace StudentRegisteration
             if (errorFlag)
             {
                 return;
+            } else
+            {
+                textboxValidator1.Visible = false;
+                textBoxValidator2.Visible= false;  
+                textBoxValidator3.Visible= false;  
             }
 
             foreach (object item in listSubject.SelectedItems)

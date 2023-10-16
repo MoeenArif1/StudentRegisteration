@@ -202,7 +202,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
-            Text = "Form1";
+            Text = "`";
             Load += Form1_Load;
             Click += Form1_Click;
             ResumeLayout(false);

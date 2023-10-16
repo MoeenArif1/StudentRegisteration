@@ -67,7 +67,7 @@
             labelFirstName.Size = new Size(64, 15);
             labelFirstName.TabIndex = 2;
             labelFirstName.Text = "First Name";
-            labelFirstName.Click += label1_Click;
+          
             // 
             // labelLastName
             // 
@@ -148,7 +148,7 @@
             checkBox1.TabIndex = 10;
             checkBox1.Text = "I agree to Agrement";
             checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+         
             // 
             // textboxValidator1
             // 
@@ -159,7 +159,7 @@
             textboxValidator1.TabIndex = 11;
             textboxValidator1.Text = "Please Enter Valid First Name";
             textboxValidator1.Visible = false;
-            textboxValidator1.TextChanged += textBox1_TextChanged;
+          
             // 
             // textBoxValidator2
             // 
@@ -203,7 +203,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "`";
-            Load += Form1_Load;
+
             Click += Form1_Click;
             ResumeLayout(false);
             PerformLayout();

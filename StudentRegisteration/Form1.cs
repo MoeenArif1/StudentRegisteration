@@ -1,29 +1,62 @@
+using System.Collections;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StudentRegisteration
 {
     public partial class Form1 : Form
     {
+        private ArrayList textBoxList = new ArrayList();
+        private List<string> subjectsList = new List<string>();
         public Form1()
         {
             InitializeComponent();
+            InitializeTextBoxes();
+            InitializeList();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void InitializeList()
         {
+            subjectsList.Add("Technical and Business Writing ");
+ 
+            subjectsList.Add("Quran Translation");
+            subjectsList.Add("Enterprise Application Development");
+            subjectsList.Add("Mobile Application Development");
+            subjectsList.Add("Computer Vision");
+            subjectsList.Add("Machine Learning");
+            subjectsList.Add("Numerical Computing");
+            UpdateListBox();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void UpdateListBox()
         {
+            listSubject.Items.Clear(); // Clear the ListBox.
+
+            // Add items from the List to the ListBox.
+            foreach (string item in subjectsList)
+            {
+                listSubject.Items.Add(item);
+            }
+        }
+        private void InitializeTextBoxes()
+        {
+            textBoxList.Add(txtFirstName);
+            textBoxList.Add(txtLastName);
+  
 
         }
+
+      
+    
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            var firstName = txtFirstName.Text.ToString().Trim();
-            var lastName = txtLastName.Text.ToString().Trim();
-            var resultString = "Name: " + firstName + " " + lastName + "\n" +
-                "Subjects: " + "\n";
+            var resultString = "Name: ";
+            foreach (System.Windows.Forms.TextBox textbox in textBoxList)
+            {
+                resultString += textbox.Text.ToString().Trim() + " ";
+                
+            }
+           
+            resultString +=   "\n" + "Subjects: " + "\n";
 
             bool errorFlag = false;
             if (!checkBox1.Checked)
@@ -82,6 +115,7 @@ namespace StudentRegisteration
             {
                 comboBoxSubjects.Items.Add(item);
             }
+            comboBoxSubjects.SelectedIndex = 0;
 
         }
 
@@ -90,14 +124,6 @@ namespace StudentRegisteration
             listSubject.Visible = false;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
